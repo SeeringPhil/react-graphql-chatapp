@@ -34,7 +34,7 @@ const Chat = () => {
         <div key={id}>
             <p>
                 {user} a écrit: <i>{content}</i>
-                <br/><b>{DateTime.fromMillis(at).toRelative()}</b>
+                <br/><b title={DateTime.fromMillis(at).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)}>{DateTime.fromMillis(at).toRelative()}</b>
             </p>
         </div>
     ));

@@ -3,7 +3,3 @@ body {
 }
 
 strong, b { font-weight: bold; }
-
-.tab {
-  tab-size: 2;
-}
