@@ -74,7 +74,7 @@ const client = new ApolloClient({
 
 
 const Messages = ({ user }) => {
-    const { data } = useQuery(MESSAGES_QUERY);
+    const { data } = useQuery(MESSAGES_QUERY, { pollInterval: 500 });
 
     if (!data) return null
     if (data.messages.length === 0) return <p>No messages have been exchanged yet</p>
