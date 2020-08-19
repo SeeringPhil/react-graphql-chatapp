@@ -131,7 +131,7 @@ const Chat = () => {
         <Container>
             <Messages user={state.user} />
 
-            <Row style={{ marginTop: "1em" }}>
+            <Row style={{ marginTop: "1em", marginBottom: "1em" }}>
                 <Col xs={2} style={{ padding: 0 }}>
                     <FormInput
                         label="User"
