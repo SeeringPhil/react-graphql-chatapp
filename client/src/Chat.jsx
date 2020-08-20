@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import { useQuery, useMutation, gql } from "@apollo/client";
+import { useSubscription, useMutation, gql } from "@apollo/client";
 
 import { DateTime } from "luxon";
 
@@ -52,7 +52,7 @@ const styles = {
 }
 
 const MESSAGES_QUERY = gql`
-  query {
+  subscription {
     messages {
       content
       user
@@ -84,7 +84,7 @@ const client = new ApolloClient({
 
 
 const Messages = ({ user }) => {
-    const { data } = useQuery(MESSAGES_QUERY, { pollInterval: 500 });
+    const { data } = useSubscription(MESSAGES_QUERY);
 
     if (!data) return null
     if (data.messages.length === 0) return <p>No messages have been exchanged yet</p>
